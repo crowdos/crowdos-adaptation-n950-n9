@@ -28,3 +28,7 @@ override_dh_auto_install:
 override_dh_auto_clean:
 	rm -rf libbmewrapper.so
 	dh_auto_clean
+
+# OK, this is bad but the binaries we have need /lib/ld-linux.so.3
+override_dh_shlibdeps:
+	dh_shlibdeps -- --ignore-missing-info
