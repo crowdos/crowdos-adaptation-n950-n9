@@ -6,9 +6,14 @@
 %:
 	dh $@
 
+override_dh_auto_build:
+	gcc -fPIC -shared -o libbmewrapper.so bmewrapper.c
+
 override_dh_auto_install:
-	mkdir -p debian/tmp/
+	mkdir -p debian/tmp/usr/lib/
 	mkdir -p debian/tmp/usr/share/doc/crowdos-adaptation-n950-n9/
+	cp libbmewrapper.so debian/tmp/usr/lib/
+
 	tar -jxvf bme-rm-680-bin-0.9.95-4.1-armv7hl.tar.bz2 -C debian/tmp/
 	tar -jxvf libcal-rm-680-bin-0.4.3-2.1-armv7hl.tar.bz2 -C debian/tmp/
 	cp bme-rm-680-bin-0.9.95-4.1-armv7hl.tar.bz2-license.txt \
@@ -19,3 +24,7 @@ override_dh_auto_install:
 	rm -rf debian/tmp/bme-rm-680-bin-0.9.95-4.1-armv7hl/usr/share/doc/
 	rm -rf debian/tmp/libcal-rm-680-bin-0.4.3-2.1-armv7hl/license.txt
 	dh_install --fail-missing
+
+override_dh_auto_clean:
+	rm -rf libbmewrapper.so
+	dh_auto_clean
