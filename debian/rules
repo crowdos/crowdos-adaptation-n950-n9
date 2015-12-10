@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+#-*-make-*-
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p debian/tmp/
+	mkdir -p debian/tmp/usr/share/doc/crowdos-adaptation-n950-n9/
+	tar -jxvf bme-rm-680-bin-0.9.95-4.1-armv7hl.tar.bz2 -C debian/tmp/
+	tar -jxvf libcal-rm-680-bin-0.4.3-2.1-armv7hl.tar.bz2 -C debian/tmp/
+	cp bme-rm-680-bin-0.9.95-4.1-armv7hl.tar.bz2-license.txt \
+		debian/tmp/usr/share/doc/crowdos-adaptation-n950-n9/bme-license.txt
+	cp libcal-rm-680-bin-0.4.3-2.1-armv7hl.tar.bz2-license.txt \
+		debian/tmp/usr/share/doc/crowdos-adaptation-n950-n9/libcal-license.txt
+	rm -rf debian/tmp/bme-rm-680-bin-0.9.95-4.1-armv7hl/etc/rc.d/
+	rm -rf debian/tmp/bme-rm-680-bin-0.9.95-4.1-armv7hl/usr/share/doc/
+	rm -rf debian/tmp/libcal-rm-680-bin-0.4.3-2.1-armv7hl/license.txt
+	dh_install --fail-missing

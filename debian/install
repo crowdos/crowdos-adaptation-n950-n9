@@ -1,0 +1,7 @@
+bme-rm-680-bin-0.9.95-4.1-armv7hl/usr/lib/* usr/lib/
+bme-rm-680-bin-0.9.95-4.1-armv7hl/usr/sbin/bme_RX-71 usr/sbin/
+bme-rm-680-bin-0.9.95-4.1-armv7hl/usr/bin/bmestat usr/bin/
+bme-rm-680-bin-0.9.95-4.1-armv7hl/usr/bin/bmedatalogger usr/bin/
+libcal-rm-680-bin-0.4.3-2.1-armv7hl/lib/* usr/lib/
+usr/share/doc/crowdos-adaptation-n950-n9/bme-license.txt
+usr/share/doc/crowdos-adaptation-n950-n9/libcal-license.txt
