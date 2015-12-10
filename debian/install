@@ -1,3 +1,5 @@
+#!/usr/bin/dh-exec
+bme.run => etc/runit/runsvdir/default/bme/run
 usr/lib/libbmewrapper.so
 bme-rm-680-bin-0.9.95-4.1-armv7hl/usr/lib/* usr/lib/
 bme-rm-680-bin-0.9.95-4.1-armv7hl/usr/sbin/bme_RX-71 usr/sbin/

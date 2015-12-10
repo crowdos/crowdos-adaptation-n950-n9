@@ -1,7 +1,7 @@
 Source: crowdos-adaptation-n950-n9
 Section: misc
 Priority: optional
-Build-Depends: debhelper (>= 9)
+Build-Depends: debhelper (>= 9), dh-exec
 Maintainer: Mohammed Sameer <msameer@foolab.org>
 Standards-Version: 3.9.5
 

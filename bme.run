@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec /usr/sbin/bme_RX-71 -n -v 5 -l stdout -c /usr/lib/hwi/hw/rx71.so
