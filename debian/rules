@@ -24,6 +24,7 @@ override_dh_auto_install:
 	rm -rf debian/tmp/bme-rm-680-bin-0.9.95-4.1-armv7hl/usr/share/doc/
 	rm -rf debian/tmp/libcal-rm-680-bin-0.4.3-2.1-armv7hl/license.txt
 	dh_install --fail-missing
+	dh_runit
 
 override_dh_auto_clean:
 	rm -rf libbmewrapper.so
